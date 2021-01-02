@@ -1,0 +1,9 @@
+*.xcworkspace
+xcuserdata
+*.pbxuser
+*.vcxproj
+.DS_Store
+
+maxmspsdk.xcconfig
+*.mxo
+
