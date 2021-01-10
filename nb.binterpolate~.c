@@ -28,14 +28,14 @@ typedef struct _interp {
     int         sampleRate;
 
     t_atom*     currMag;        // Contains the current magnitude/real values for each FFT bin (used while interpolating to the target magnitudes)
-    t_atom*     currPhase;      // Contains the current phase/imaginary values for each FFT bin (used interpolating to the target phases)
+    t_atom*     currPhase;      // Contains the current phase/imaginary values for each FFT bin (used while interpolating to the target phases)
     t_atom*     targetMag;      // Target list of magnitudes for the interpolation
     t_atom*     targetPhase;    // Target list of phases for the interpolation
     t_atom*     incMag;         // Amount to increment each magnitude per frame
     t_atom*     incPhase;       // Amount to increment each phase per frame
     t_atom*     totalFrames;    // Total number of frames used for the interpolation
     t_atom*     frameCount;     // The current frame of the interpolation (frameCount/totalFrames * 100 = interpolation %)
-    t_atom*     updateTarget;   // For each FFT bin, set to updateTarget to 1 if interpolation is complete and we need a new target, 0 otherwise
+    t_atom*     updateTarget;   // For each FFT bin, set updateTarget to 1 if the bin has reached the target needs a new target, 0 otherwise
     
     float       interpLengthSecs;       // Base number of seconds to spend interpolating between the start and goal FFT snapshots
     float       interpVarianceSecs;     // Maximum allowable random variance to add or subtract to the base interpolation length (in seconds)
